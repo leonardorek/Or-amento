@@ -1,5 +1,8 @@
 {
-  "name": "Proposta Comercial - Urbano Norte",
-  "description": "Proposta comercial personalizada de gestão de tráfego pago para o aplicativo de mobilidade Urbano Norte.",
-  "requestFramePermissions": []
+  "name": "Parceria Estratégica Digital - Aline",
+  "description": "Proposta comercial de parceria de estratégia digital e coprodução para Aline, Mentora de Beleza & Estética.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

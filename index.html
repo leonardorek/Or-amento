@@ -1,6 +1,8 @@
 <!-- BLOCO ÚNICO PARA WIDGET HTML ELEMENTOR - LEONARDO REK -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parceria Estratégica Digital • Aline | Leonardo Rek</title>
+<meta name="description" content="Proposta comercial de parceria de estratégia digital e coprodução para Aline, Mentora de Beleza & Estética.">
 <div id="rek-landing-page">
     
     <!-- FontAwesome & Google Fonts with preconnect optimization -->
@@ -11,13 +13,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
-        /* REGRAS OBRIGATÓRIAS DE RESET ELEMENTOR */
+        /* REGRAS OBRIGATÓRIAS DE RESET ELEMENTOR & BOX-SIZING */
         html, body { 
             margin: 0 !important; 
             padding: 0 !important; 
             width: 100% !important; 
             overflow-x: hidden !important; 
             background-color: #060b13 !important;
+            -webkit-font-smoothing: antialiased !important;
+            -moz-osx-font-smoothing: grayscale !important;
+            scroll-behavior: smooth !important;
         }
         .elementor-section, .elementor-column, .elementor-widget-html, .elementor-widget-container { 
             width: 100% !important; 
@@ -32,12 +37,15 @@
             margin: 0 !important;
             padding: 0 !important;
             width: 100% !important;
+            max-width: 100% !important;
+            overflow-x: hidden !important;
             background-color: #060b13 !important;
             color: #ffffff !important;
             font-family: 'Inter', Arial, sans-serif !important;
             line-height: 1.6 !important;
             position: relative !important;
             z-index: 99 !important;
+            -webkit-text-size-adjust: 100% !important;
         }
 
         #rek-landing-page :root {
@@ -52,8 +60,20 @@
             --border-color: rgba(255, 255, 255, 0.08) !important;
         }
 
-        #rek-landing-page * { box-sizing: border-box !important; }
-        #rek-landing-page .lp-container { max-width: 1100px !important; margin: 0 auto !important; padding: 0 20px !important; }
+        #rek-landing-page * { 
+            box-sizing: border-box !important; 
+            -webkit-tap-highlight-color: transparent !important;
+        }
+        #rek-landing-page a, #rek-landing-page button {
+            touch-action: manipulation !important;
+        }
+
+        #rek-landing-page .lp-container { 
+            max-width: 1100px !important; 
+            width: 100% !important;
+            margin: 0 auto !important; 
+            padding: 0 24px !important; 
+        }
         
         #rek-landing-page section { 
             padding: 100px 0 !important; 
@@ -64,22 +84,33 @@
             justify-content: center !important;
             background-color: #060b13 !important;
             overflow: hidden !important;
+            scroll-margin-top: 30px !important;
         }
 
-        #rek-landing-page h1, #rek-landing-page h2, #rek-landing-page h3 { margin: 0 !important; text-align: center !important; letter-spacing: -1px !important; color: #ffffff !important; word-wrap: break-word !important; }
-        #rek-landing-page p { color: #94a3b8 !important; text-align: center !important; }
+        #rek-landing-page h1, #rek-landing-page h2, #rek-landing-page h3 { 
+            margin: 0 !important; 
+            text-align: center !important; 
+            letter-spacing: -0.5px !important; 
+            color: #ffffff !important; 
+            word-wrap: break-word !important; 
+        }
+        #rek-landing-page p { 
+            color: #94a3b8 !important; 
+            text-align: center !important; 
+        }
 
         @keyframes logoPulse {
-            0% { transform: scale(1); box-shadow: 0 0 40px rgba(0, 209, 255, 0.4); }
-            50% { transform: scale(1.03); box-shadow: 0 0 65px rgba(0, 209, 255, 0.4); }
-            100% { transform: scale(1); box-shadow: 0 0 40px rgba(0, 209, 255, 0.4); }
+            0% { transform: scale(1); box-shadow: 0 0 35px rgba(0, 209, 255, 0.35); }
+            50% { transform: scale(1.03); box-shadow: 0 0 60px rgba(0, 209, 255, 0.5); }
+            100% { transform: scale(1); box-shadow: 0 0 35px rgba(0, 209, 255, 0.35); }
         }
 
-        /* CORREÇÃO DO BUG DE VISIBILIDADE (REVEAL) */
+        /* REVEAL ANIMATION */
         #rek-landing-page .reveal {
             opacity: 0 !important;
-            transform: translateY(35px) !important;
-            transition: all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+            transform: translateY(28px) !important;
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            will-change: opacity, transform !important;
         }
         #rek-landing-page .reveal.active {
             opacity: 1 !important;
@@ -94,61 +125,614 @@
         #rek-landing-page .side-nav-controls {
             position: fixed !important;
             bottom: 40px !important;
-            right: 30px !important;
+            right: 28px !important;
             display: flex !important;
             flex-direction: column !important;
             gap: 12px !important;
             z-index: 100000 !important;
         }
         #rek-landing-page .nav-ctrl-btn {
-            width: 55px !important;
-            height: 55px !important;
+            width: 52px !important;
+            height: 52px !important;
             border-radius: 50% !important;
             background-color: #00d1ff !important;
-            color: #000 !important;
+            color: #000000 !important;
             display: flex !important;
             justify-content: center !important;
             align-items: center !important;
             border: none !important;
             cursor: pointer !important;
-            transition: 0.3s !important;
-            box-shadow: 0 10px 25px rgba(0, 209, 255, 0.3) !important;
+            transition: all 0.25s ease !important;
+            box-shadow: 0 8px 24px rgba(0, 209, 255, 0.35) !important;
             outline: none !important;
         }
-        #rek-landing-page .nav-ctrl-btn i { font-size: 1.1rem !important; }
-        #rek-landing-page .nav-ctrl-btn:hover { transform: scale(1.1) !important; filter: brightness(1.1) !important; }
+        #rek-landing-page .nav-ctrl-btn i { font-size: 1.05rem !important; }
+        #rek-landing-page .nav-ctrl-btn:hover { transform: scale(1.08) !important; filter: brightness(1.1) !important; }
+        #rek-landing-page .nav-ctrl-btn:active { transform: scale(0.94) !important; }
 
         /* HERO SECTION */
-        #rek-landing-page .hero { height: 100vh !important; background: radial-gradient(circle at center, #0f1c2e 0%, #060b13 100%) !important; }
-        #rek-landing-page .hero-logo-box {
-            width: 180px !important; height: 180px !important; 
-            background: linear-gradient(135deg, #00d1ff, #0066ff) !important;
-            border-radius: 42px !important;
-            display: flex !important; justify-content: center !important; align-items: center !important; 
-            margin: 0 auto 40px auto !important;
-            animation: logoPulse 4s infinite ease-in-out !important;
-            box-shadow: 0 25px 50px rgba(0, 209, 255, 0.3) !important;
+        #rek-landing-page .hero { 
+            height: 100vh !important; 
+            min-height: 600px !important;
+            background: radial-gradient(circle at center, #0f1c2e 0%, #060b13 100%) !important; 
+            padding: 40px 0 !important;
         }
-        #rek-landing-page .hero-logo-box img { width: 80% !important; height: 80% !important; object-fit: contain !important; }
-        #rek-landing-page .hero h1 { font-size: 4rem !important; font-weight: 900 !important; line-height: 1.1 !important; margin-bottom: 5px !important; }
-        #rek-landing-page .hero .subtitle { font-size: 1.2rem !important; color: #00d1ff !important; font-weight: 600 !important; text-transform: uppercase !important; letter-spacing: 4px !important; text-align: center !important; margin-bottom: 20px !important; display: block !important; }
-        #rek-landing-page .hero .mova-mundo { font-size: 1.1rem !important; letter-spacing: 6px !important; color: #94a3b8 !important; text-transform: uppercase !important; font-weight: 300 !important; text-align: center !important; display: block !important; }
+        #rek-landing-page .hero-logo-box {
+            width: 170px !important; 
+            height: 170px !important; 
+            background: linear-gradient(135deg, #00d1ff, #0066ff) !important;
+            border-radius: 40px !important;
+            display: flex !important; 
+            justify-content: center !important; 
+            align-items: center !important; 
+            margin: 0 auto 35px auto !important;
+            animation: logoPulse 4s infinite ease-in-out !important;
+            box-shadow: 0 20px 45px rgba(0, 209, 255, 0.3) !important;
+        }
+        #rek-landing-page .hero-logo-box img { width: 75% !important; height: 75% !important; object-fit: contain !important; }
+        #rek-landing-page .hero h1 { 
+            font-size: clamp(2.6rem, 8vw, 4.2rem) !important; 
+            font-weight: 900 !important; 
+            line-height: 1.08 !important; 
+            margin-bottom: 12px !important; 
+        }
+        #rek-landing-page .hero .subtitle { 
+            font-size: 1.15rem !important; 
+            color: #00d1ff !important; 
+            font-weight: 700 !important; 
+            text-transform: uppercase !important; 
+            letter-spacing: 3px !important; 
+            text-align: center !important; 
+            margin-bottom: 15px !important; 
+            display: block !important; 
+        }
+        #rek-landing-page .hero .mova-mundo { 
+            font-size: 0.95rem !important; 
+            letter-spacing: 4px !important; 
+            color: #94a3b8 !important; 
+            text-transform: uppercase !important; 
+            font-weight: 400 !important; 
+            text-align: center !important; 
+            display: block !important; 
+            line-height: 1.5 !important;
+            max-width: 650px !important;
+            margin: 0 auto !important;
+        }
 
-        /* PERFIL */
+        /* CHECKLIST ESCOPO */
+        #rek-landing-page .section-tag { 
+            color: #00d1ff !important; 
+            font-weight: 700 !important; 
+            font-size: 0.85rem !important; 
+            margin-bottom: 12px !important; 
+            display: block !important; 
+            text-align: center !important; 
+            text-transform: uppercase !important; 
+            letter-spacing: 2px !important; 
+        }
+        #rek-landing-page .checklist-grid { 
+            display: grid !important; 
+            grid-template-columns: repeat(2, 1fr) !important; 
+            gap: 20px !important; 
+            margin-top: 45px !important; 
+        }
+        #rek-landing-page .check-item {
+            background: rgba(255, 255, 255, 0.03) !important; 
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+            padding: 24px !important; 
+            border-radius: 18px !important;
+            display: flex !important; 
+            align-items: flex-start !important; 
+            gap: 18px !important;
+            transition: all 0.3s ease !important;
+        }
+        #rek-landing-page .check-item:hover {
+            border-color: rgba(0, 209, 255, 0.3) !important;
+            background: rgba(0, 209, 255, 0.04) !important;
+            transform: translateY(-2px) !important;
+        }
+        #rek-landing-page .check-item i { 
+            color: #00d1ff !important; 
+            font-size: 1.25rem !important; 
+            width: 44px !important;
+            height: 44px !important;
+            min-width: 44px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            background: rgba(0, 209, 255, 0.08) !important;
+            border: 1px solid rgba(0, 209, 255, 0.2) !important;
+            border-radius: 12px !important;
+            flex-shrink: 0 !important; 
+            margin-top: 2px !important; 
+        }
+        #rek-landing-page .check-item div strong { 
+            color: #ffffff !important; 
+            display: block !important; 
+            margin-bottom: 6px !important; 
+            font-size: 1.05rem !important; 
+            line-height: 1.35 !important; 
+        }
+        #rek-landing-page .check-item div span { 
+            color: #94a3b8 !important; 
+            font-size: 0.92rem !important; 
+            line-height: 1.55 !important; 
+        }
+
+        /* ==========================================================================
+           PROVA SOCIAL DE ALTO IMPACTO (14 COMPROVANTES REAIS EM MOCKUP)
+           ========================================================================== */
+        #rek-landing-page #resultados {
+            background-color: #060b13 !important;
+            padding: 90px 0 !important;
+            position: relative !important;
+        }
+        #rek-landing-page .proof-pill-badge {
+            background: rgba(0, 255, 136, 0.08) !important;
+            border: 1px solid rgba(0, 255, 136, 0.28) !important;
+            color: #00ff88 !important;
+            font-size: 0.8rem !important;
+            font-weight: 800 !important;
+            letter-spacing: 2px !important;
+            text-transform: uppercase !important;
+            padding: 8px 26px !important;
+            border-radius: 9999px !important;
+            display: inline-block !important;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.18) !important;
+            margin-bottom: 22px !important;
+            text-align: center !important;
+        }
+        #rek-landing-page #resultados h2 {
+            font-size: clamp(2.2rem, 5.8vw, 3.8rem) !important;
+            font-weight: 900 !important;
+            letter-spacing: -1.2px !important;
+            color: #ffffff !important;
+            margin-bottom: 36px !important;
+            line-height: 1.16 !important;
+            text-align: center !important;
+        }
+        #rek-landing-page #resultados .results-subtitle {
+            color: #94a3b8 !important;
+            font-size: clamp(1rem, 2.2vw, 1.18rem) !important;
+            max-width: 840px !important;
+            margin: 0 auto 48px auto !important;
+            line-height: 1.65 !important;
+            text-align: center !important;
+        }
+        #rek-landing-page .proof-card-box {
+            background: #090e17 !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+            border-radius: 28px !important;
+            padding: 30px 28px 34px 28px !important;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45) !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+            position: relative !important;
+        }
+        #rek-landing-page .proof-box-heading {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 12px !important;
+            color: #ffffff !important;
+            font-size: clamp(1.2rem, 2.7vw, 1.55rem) !important;
+            font-weight: 800 !important;
+            text-align: center !important;
+            margin-bottom: 34px !important;
+            letter-spacing: -0.01em !important;
+        }
+        #rek-landing-page .proof-box-heading i {
+            color: #00ff88 !important;
+            font-size: 1.35rem !important;
+            filter: drop-shadow(0 0 10px rgba(0, 255, 136, 0.5)) !important;
+        }
+        #rek-landing-page .phones-container-grid {
+            display: grid !important;
+            grid-template-columns: repeat(4, 1fr) !important;
+            gap: 20px 18px !important;
+            width: 100% !important;
+        }
+        #rek-landing-page .phone-mockup {
+            background: #040912 !important;
+            border: 1.5px solid rgba(255, 255, 255, 0.12) !important;
+            border-radius: 24px !important;
+            overflow: hidden !important;
+            position: relative !important;
+            display: block !important;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55) !important;
+            user-select: none !important;
+            cursor: pointer !important;
+            transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease !important;
+        }
+        #rek-landing-page .phone-mockup:hover {
+            transform: translateY(-6px) scale(1.015) !important;
+            border-color: rgba(0, 255, 136, 0.45) !important;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8), 0 0 22px rgba(0, 255, 136, 0.15) !important;
+        }
+        #rek-landing-page .phone-idx-badge {
+            position: absolute !important;
+            top: 10px !important;
+            left: 10px !important;
+            z-index: 5 !important;
+            background: rgba(13, 20, 32, 0.75) !important;
+            backdrop-filter: blur(8px) !important;
+            -webkit-backdrop-filter: blur(8px) !important;
+            border: 1px solid rgba(255, 255, 255, 0.14) !important;
+            border-radius: 6px !important;
+            color: #cbd5e1 !important;
+            font-size: 0.72rem !important;
+            font-weight: 700 !important;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+            padding: 3px 8px !important;
+            line-height: 1.1 !important;
+            letter-spacing: 0.3px !important;
+        }
+        #rek-landing-page .phone-screen-image {
+            width: 100% !important;
+            height: auto !important;
+            aspect-ratio: 1 / 1.62 !important;
+            object-fit: cover !important;
+            object-position: center top !important;
+            transform: scale(1.09) !important;
+            transform-origin: center 10% !important;
+            display: block !important;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+        #rek-landing-page .phone-mockup:hover .phone-screen-image {
+            transform: scale(1.14) !important;
+        }
+
+        /* LIGHTBOX FULLSCREEN MODAL */
+        #rek-proof-lightbox {
+            position: fixed !important;
+            inset: 0 !important;
+            background: rgba(3, 7, 18, 0.94) !important;
+            backdrop-filter: blur(14px) !important;
+            -webkit-backdrop-filter: blur(14px) !important;
+            z-index: 99999 !important;
+            display: none !important;
+            align-items: center !important;
+            justify-content: center !important;
+            opacity: 0 !important;
+            transition: opacity 0.25s ease !important;
+            padding: 16px !important;
+            box-sizing: border-box !important;
+        }
+        #rek-proof-lightbox.active {
+            display: flex !important;
+            opacity: 1 !important;
+        }
+        #rek-proof-lightbox .lightbox-content-box {
+            position: relative !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            max-height: 96vh !important;
+            max-width: 96vw !important;
+        }
+        #rek-proof-lightbox .lightbox-top-bar {
+            width: 100% !important;
+            max-width: 480px !important;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            padding: 0 4px 12px 4px !important;
+            color: #ffffff !important;
+            box-sizing: border-box !important;
+        }
+        #rek-proof-lightbox .lightbox-counter {
+            font-size: 0.88rem !important;
+            font-weight: 700 !important;
+            color: #00ff88 !important;
+            letter-spacing: 1px !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+        }
+        #rek-proof-lightbox .lightbox-close-btn {
+            width: 38px !important;
+            height: 38px !important;
+            border-radius: 50% !important;
+            background: rgba(255, 255, 255, 0.12) !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+            color: #ffffff !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            cursor: pointer !important;
+            font-size: 1.1rem !important;
+            transition: all 0.2s ease !important;
+        }
+        #rek-proof-lightbox .lightbox-close-btn:hover {
+            background: #ff4757 !important;
+            border-color: #ff4757 !important;
+            color: #ffffff !important;
+            transform: rotate(90deg) !important;
+        }
+        #rek-proof-lightbox .lightbox-img-frame {
+            position: relative !important;
+            border-radius: 20px !important;
+            overflow: hidden !important;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85), 0 0 0 1.5px rgba(255, 255, 255, 0.15) !important;
+            background: #000000 !important;
+            max-height: 84vh !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        #rek-proof-lightbox img {
+            max-height: 84vh !important;
+            max-width: 86vw !important;
+            object-fit: contain !important;
+            display: block !important;
+        }
+        #rek-proof-lightbox .lightbox-arrow {
+            position: absolute !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+            width: 48px !important;
+            height: 48px !important;
+            border-radius: 50% !important;
+            background: rgba(15, 23, 42, 0.8) !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+            color: #ffffff !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            cursor: pointer !important;
+            font-size: 1.1rem !important;
+            transition: all 0.2s ease !important;
+            z-index: 25 !important;
+        }
+        #rek-proof-lightbox .lightbox-arrow:hover {
+            background: #00ff88 !important;
+            color: #020617 !important;
+            border-color: #00ff88 !important;
+        }
+        #rek-proof-lightbox .lightbox-arrow.prev {
+            left: -60px !important;
+        }
+        #rek-proof-lightbox .lightbox-arrow.next {
+            right: -60px !important;
+        }
+
+        /* PREÇO & CONDIÇÕES */
+        #rek-landing-page .pricing-grid {
+            display: flex !important;
+            justify-content: center !important;
+            margin-top: 40px !important;
+            width: 100% !important;
+        }
+        #rek-landing-page .pricing-card {
+            background: #0d141f !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+            border-radius: 24px !important;
+            padding: 45px 36px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            transition: transform 0.3s ease, border-color 0.3s ease !important;
+            position: relative !important;
+            max-width: 640px !important;
+            width: 100% !important;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4) !important;
+        }
+        #rek-landing-page .pricing-card.featured {
+            border: 2px solid #00ff88 !important;
+            background: linear-gradient(180deg, #0d141f 0%, #08281a 100%) !important;
+            box-shadow: 0 20px 50px rgba(0, 255, 136, 0.18) !important;
+        }
+        #rek-landing-page .card-badge {
+            position: absolute !important;
+            top: -14px !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            background: #00ff88 !important;
+            color: #000000 !important;
+            padding: 6px 22px !important;
+            border-radius: 30px !important;
+            font-weight: 800 !important;
+            font-size: 0.8rem !important;
+            text-transform: uppercase !important;
+            white-space: nowrap !important;
+            letter-spacing: 1px !important;
+            box-shadow: 0 4px 15px rgba(0, 255, 136, 0.4) !important;
+        }
+        #rek-landing-page .pricing-card h3 { 
+            font-size: clamp(1.25rem, 4vw, 1.6rem) !important; 
+            margin: 8px 0 15px 0 !important; 
+            color: #ffffff !important; 
+            font-weight: 800 !important; 
+        }
+
+        /* PRICE BOX */
+        #rek-landing-page .price-box {
+            margin: 20px 0 !important;
+            padding: 24px 20px !important;
+            background: rgba(0, 0, 0, 0.35) !important;
+            border-radius: 18px !important;
+            border: 1px solid rgba(0, 255, 136, 0.25) !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+        }
+        #rek-landing-page .price-type-label {
+            font-size: 0.82rem !important;
+            color: #94a3b8 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+            margin-bottom: 6px !important;
+            font-weight: 700 !important;
+        }
+        #rek-landing-page .price-amount {
+            color: #00ff88 !important;
+            font-size: clamp(2.4rem, 7.5vw, 3.3rem) !important;
+            font-weight: 900 !important;
+            margin: 0 !important;
+            line-height: 1.05 !important;
+        }
+        #rek-landing-page .price-amount small {
+            font-size: clamp(1rem, 3.2vw, 1.2rem) !important;
+            color: #cbd5e1 !important;
+            font-weight: 600 !important;
+        }
+        #rek-landing-page .coproducao-tag {
+            margin-top: 14px !important;
+            padding-top: 12px !important;
+            border-top: 1px dashed rgba(255, 255, 255, 0.15) !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 3px !important;
+            align-items: center !important;
+        }
+        #rek-landing-page .coprod-main {
+            font-size: clamp(0.98rem, 3.6vw, 1.15rem) !important;
+            color: #00d1ff !important;
+            font-weight: 800 !important;
+            line-height: 1.3 !important;
+        }
+        #rek-landing-page .coprod-desc {
+            color: #94a3b8 !important;
+            font-weight: 400 !important;
+            font-size: 0.85rem !important;
+            line-height: 1.4 !important;
+        }
+
+        #rek-landing-page .save-tag { 
+            color: #00ff88 !important; 
+            font-weight: 700 !important; 
+            font-size: 0.95rem !important; 
+            margin: 10px 0 15px 0 !important; 
+            display: block !important; 
+            text-align: center !important; 
+        }
+
+        /* PRICING FEATURES LIST */
+        #rek-landing-page .pricing-features-list {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 0 25px 0 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 10px !important;
+            width: 100% !important;
+        }
+        #rek-landing-page .pricing-features-list li {
+            display: flex !important;
+            align-items: flex-start !important;
+            text-align: left !important;
+            gap: 12px !important;
+            color: #ffffff !important;
+            font-size: 0.93rem !important;
+            line-height: 1.45 !important;
+            padding: 10px 14px !important;
+            border-radius: 12px !important;
+            background: rgba(255, 255, 255, 0.025) !important;
+            border: 1px solid rgba(255, 255, 255, 0.05) !important;
+        }
+        #rek-landing-page .pricing-features-list li i {
+            color: #00ff88 !important;
+            margin-top: 3px !important;
+            flex-shrink: 0 !important;
+            font-size: 0.95rem !important;
+        }
+
+        /* COUNTDOWN */
+        #rek-landing-page .countdown-grid { 
+            display: flex !important; 
+            justify-content: center !important; 
+            gap: 18px !important; 
+            margin: 40px 0 !important; 
+        }
+        #rek-landing-page .count-unit { 
+            background: #0d141f !important; 
+            border: 2px solid #ffcc00 !important; 
+            width: 110px !important; 
+            padding: 22px 0 !important; 
+            border-radius: 18px !important; 
+            text-align: center !important;
+            box-shadow: 0 10px 25px rgba(255, 204, 0, 0.12) !important;
+        }
+        #rek-landing-page .count-num { 
+            font-size: 2.6rem !important; 
+            font-weight: 900 !important; 
+            color: #ffcc00 !important; 
+            line-height: 1 !important; 
+            display: block !important; 
+        }
+        #rek-landing-page .count-label { 
+            font-size: 0.72rem !important; 
+            color: #94a3b8 !important; 
+            text-transform: uppercase !important; 
+            letter-spacing: 1px !important;
+            margin-top: 5px !important;
+            display: block !important;
+        }
+
+        /* FINALIZAR SECTION */
+        #rek-landing-page #finalizar h2 { 
+            font-size: clamp(1.8rem, 5vw, 3rem) !important; 
+            font-weight: 900 !important; 
+            margin-bottom: 25px !important; 
+            line-height: 1.15 !important; 
+        }
+
+        /* CTA BUTTON */
+        @keyframes pulseCta {
+            0% { transform: scale(1); box-shadow: 0 8px 25px rgba(0, 255, 136, 0.25) !important; }
+            50% { transform: scale(1.03); box-shadow: 0 12px 35px rgba(0, 255, 136, 0.45) !important; }
+            100% { transform: scale(1); box-shadow: 0 8px 25px rgba(0, 255, 136, 0.25) !important; }
+        }
+        #rek-landing-page .btn-cta {
+            background: #00ff88 !important;
+            color: #000000 !important;
+            padding: 16px 36px !important;
+            border-radius: 60px !important;
+            font-weight: 800 !important;
+            font-size: 1.05rem !important;
+            text-decoration: none !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            box-shadow: 0 8px 25px rgba(0, 255, 136, 0.3) !important;
+            transition: all 0.25s ease !important;
+            animation: pulseCta 2.5s infinite ease-in-out !important;
+            min-height: 52px !important;
+            line-height: 1.3 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.5px !important;
+            cursor: pointer !important;
+        }
+        #rek-landing-page .btn-cta:hover {
+            transform: translateY(-2px) scale(1.03) !important;
+            box-shadow: 0 15px 40px rgba(0, 255, 136, 0.5) !important;
+            background: #00e676 !important;
+            animation: none !important;
+        }
+        #rek-landing-page .btn-cta:active {
+            transform: scale(0.97) !important;
+        }
+
+        /* BIO / PERFIL */
         #rek-landing-page .profile-card {
-            background: #0d141f !important; border: 1px solid rgba(255, 255, 255, 0.08) !important;
-            border-radius: 24px !important; padding: 50px !important;
-            display: flex !important; align-items: center !important; gap: 40px !important;
-            max-width: 950px !important; margin: 40px auto !important;
+            background: #0d141f !important; 
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+            border-radius: 24px !important; 
+            padding: 48px !important;
+            display: flex !important; 
+            align-items: center !important; 
+            gap: 40px !important;
+            max-width: 950px !important; 
+            margin: 40px auto !important;
             box-shadow: 0 20px 50px rgba(0,0,0,0.3) !important;
         }
         #rek-landing-page .profile-img { 
-            width: 180px !important; 
-            height: 180px !important; 
-            min-width: 180px !important;
-            min-height: 180px !important;
-            max-width: 180px !important;
-            max-height: 180px !important;
+            width: 170px !important; 
+            height: 170px !important; 
+            min-width: 170px !important;
+            min-height: 170px !important;
+            max-width: 170px !important;
+            max-height: 170px !important;
             aspect-ratio: 1 / 1 !important;
             border-radius: 50% !important; 
             object-fit: cover !important; 
@@ -168,149 +752,86 @@
             font-weight: 800 !important;
             letter-spacing: 1px !important;
             text-transform: uppercase !important;
-            margin-bottom: 20px !important;
+            margin-bottom: 16px !important;
             text-align: left !important;
         }
         #rek-landing-page .profile-info h3 {
-            font-size: 2.5rem !important;
+            font-size: 2.3rem !important;
             font-weight: 900 !important;
             margin-top: 0 !important;
-            margin-bottom: 20px !important;
+            margin-bottom: 18px !important;
             color: #ffffff !important;
             text-transform: uppercase !important;
             text-align: left !important;
         }
-        #rek-landing-page .profile-info h3 span {
-            color: #00d1ff !important;
-        }
+        #rek-landing-page .profile-info h3 span { color: #00d1ff !important; }
         #rek-landing-page .profile-info .profile-lead {
-            font-size: 1.15rem !important;
+            font-size: 1.1rem !important;
             font-weight: 700 !important;
             line-height: 1.6 !important;
             color: #ffffff !important;
-            margin-bottom: 20px !important;
+            margin-bottom: 16px !important;
             text-align: left !important;
         }
         #rek-landing-page .profile-info .profile-desc {
-            font-size: 1.05rem !important;
+            font-size: 1rem !important;
             line-height: 1.7 !important;
             color: #94a3b8 !important;
-            margin-bottom: 30px !important;
+            margin-bottom: 25px !important;
             text-align: left !important;
         }
         #rek-landing-page .profile-badges {
             display: flex !important;
-            gap: 15px !important;
+            gap: 14px !important;
             flex-wrap: wrap !important;
-            padding-top: 25px !important;
+            padding-top: 22px !important;
             border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
             justify-content: flex-start !important;
         }
         #rek-landing-page .profile-badge-item {
             background: rgba(255, 255, 255, 0.03) !important;
             border: 1px solid rgba(255, 255, 255, 0.08) !important;
-            padding: 10px 20px !important;
+            padding: 10px 18px !important;
             border-radius: 12px !important;
             display: flex !important;
             align-items: center !important;
             gap: 10px !important;
-        }
-        #rek-landing-page .highlight-text { color: #fff !important; font-weight: 700 !important; }
-
-        /* CHECKLIST */
-        #rek-landing-page .section-tag { color: #00d1ff !important; font-weight: 700 !important; font-size: 0.85rem !important; margin-bottom: 15px !important; display: block !important; text-align: center !important; text-transform: uppercase !important; letter-spacing: 2px !important; }
-        #rek-landing-page .checklist-grid { display: grid !important; grid-template-columns: repeat(2, 1fr) !important; gap: 20px !important; margin-top: 50px !important; }
-        #rek-landing-page .check-item {
-            background: rgba(255,255,255,0.03) !important; border: 1px solid rgba(255, 255, 255, 0.08) !important;
-            padding: 25px !important; border-radius: 16px !important;
-            display: flex !important; align-items: flex-start !important; gap: 20px !important;
-        }
-        #rek-landing-page .check-item i { color: #00d1ff !important; font-size: 1.4rem !important; flex-shrink: 0 !important; margin-top: 5px !important; }
-        #rek-landing-page .check-item div strong { color: #fff !important; display: block !important; margin-bottom: 5px !important; font-size: 1.1rem !important; line-height: 1.3 !important; }
-        #rek-landing-page .check-item div span { color: #94a3b8 !important; font-size: 0.95rem !important; line-height: 1.5 !important; }
-
-        /* GARANTIA */
-        #rek-landing-page .warranty-card { background: #0d141f !important; border: 1px solid rgba(255, 255, 255, 0.08) !important; border-radius: 24px !important; padding: 40px !important; display: flex !important; align-items: center !important; gap: 25px !important; max-width: 900px !important; margin: 40px auto !important; }
-        #rek-landing-page .warranty-icon-box { width: 50px !important; height: 50px !important; background: rgba(0, 255, 136, 0.1) !important; border-radius: 50% !important; display: flex !important; justify-content: center !important; align-items: center !important; flex-shrink: 0 !important; }
-        #rek-landing-page .warranty-icon-box i { color: #00ff88 !important; font-size: 1.5rem !important; }
-        #rek-landing-page .warranty-content { text-align: left !important; }
-        #rek-landing-page .warranty-content strong { color: #fff !important; font-size: 1.25rem !important; display: block !important; margin-bottom: 8px !important; }
-        #rek-landing-page .warranty-content p { text-align: left !important; color: #cbd5e1 !important; margin: 0 !important; }
-
-        /* COUNTDOWN */
-        #rek-landing-page .countdown-grid { display: flex !important; justify-content: center !important; gap: 20px !important; margin: 50px 0 !important; }
-        #rek-landing-page .count-unit { background: #0d141f !important; border: 2px solid #ffcc00 !important; width: 110px !important; padding: 25px 0 !important; border-radius: 18px !important; }
-        #rek-landing-page .count-num { font-size: 2.8rem !important; font-weight: 900 !important; color: #ffcc00 !important; line-height: 1 !important; display: block !important; }
-        #rek-landing-page .count-label { font-size: 0.75rem !important; color: #94a3b8 !important; text-transform: uppercase !important; }
-
-        /* CTA */
-        @keyframes pulseCta {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 8px 25px rgba(0, 255, 136, 0.25) !important;
-            }
-            50% {
-                transform: scale(1.04);
-                box-shadow: 0 12px 35px rgba(0, 255, 136, 0.45) !important;
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 8px 25px rgba(0, 255, 136, 0.25) !important;
-            }
-        }
-        #rek-landing-page .btn-cta {
-            background: #00ff88 !important;
-            color: #000 !important;
-            padding: 12px 32px !important;
-            border-radius: 60px !important;
-            font-weight: 900 !important;
-            font-size: 1.05rem !important;
-            text-decoration: none !important;
-            display: inline-block !important;
-            box-shadow: 0 8px 25px rgba(0, 255, 136, 0.25) !important;
-            transition: all 0.3s ease !important;
-            animation: pulseCta 2.5s infinite ease-in-out !important;
-        }
-        #rek-landing-page .btn-cta:hover {
-            transform: translateY(-2px) scale(1.05) !important;
-            box-shadow: 0 15px 40px rgba(0, 255, 136, 0.5) !important;
-            background: #00e676 !important;
-            animation: none !important;
+            font-size: 0.92rem !important;
         }
 
-        /* RODAPÉ PROFISSIONAL */
+        /* RODAPÉ */
         #rek-landing-page footer {
             background-color: #0d141f !important;
-            padding: 60px 0 40px 0 !important;
+            padding: 60px 0 45px 0 !important;
             border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
-            margin-top: 0 !important;
-            scroll-margin-top: 50px !important;
+            scroll-margin-top: 30px !important;
         }
         #rek-landing-page .footer-grid {
             display: grid !important;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
             gap: 40px !important;
             margin-bottom: 40px !important;
         }
         #rek-landing-page .footer-brand h4 {
             color: #00d1ff !important;
-            font-size: 1.4rem !important;
+            font-size: 1.35rem !important;
             text-align: left !important;
-            margin-bottom: 15px !important;
+            margin-bottom: 12px !important;
             text-transform: uppercase !important;
             letter-spacing: 2px !important;
         }
         #rek-landing-page .footer-brand p {
             text-align: left !important;
             font-size: 0.9rem !important;
-            max-width: 300px !important;
+            max-width: 320px !important;
             margin: 0 !important;
+            line-height: 1.6 !important;
         }
         #rek-landing-page .footer-contact h4 {
             color: #ffffff !important;
             font-size: 1.1rem !important;
             text-align: left !important;
-            margin-bottom: 20px !important;
+            margin-bottom: 18px !important;
             font-weight: 700 !important;
         }
         #rek-landing-page .contact-list {
@@ -329,7 +850,7 @@
         #rek-landing-page .contact-item a {
             color: #00d1ff !important;
             text-decoration: none !important;
-            transition: 0.3s !important;
+            transition: 0.25s !important;
         }
         #rek-landing-page .contact-item a:hover {
             color: #00ff88 !important;
@@ -337,7 +858,7 @@
         }
         #rek-landing-page .contact-item i {
             color: #00ff88 !important;
-            width: 20px !important;
+            width: 22px !important;
             text-align: center !important;
         }
         #rek-landing-page .footer-bottom {
@@ -347,309 +868,448 @@
             justify-content: space-between !important;
             align-items: center !important;
             flex-wrap: wrap !important;
-            gap: 20px !important;
+            gap: 16px !important;
         }
         #rek-landing-page .footer-bottom p {
-            font-size: 0.8rem !important;
+            font-size: 0.82rem !important;
             color: #64748b !important;
             margin: 0 !important;
             text-align: left !important;
         }
 
         /* DOTS */
-        #rek-landing-page .page-dots { position: fixed !important; bottom: 40px !important; left: 50% !important; transform: translateX(-50%) !important; display: flex !important; gap: 15px !important; z-index: 99999 !important; background: rgba(0, 0, 0, 0.6) !important; backdrop-filter: blur(15px) !important; padding: 12px 25px !important; border-radius: 60px !important; border: 1px solid rgba(255,255,255,0.1) !important; }
-        #rek-landing-page .dot { display: inline-block !important; width: 12px !important; height: 12px !important; background: rgba(255,255,255,0.2) !important; border-radius: 50% !important; cursor: pointer !important; transition: 0.4s ease !important; }
-        #rek-landing-page .dot.active { background: #00d1ff !important; width: 35px !important; border-radius: 12px !important; }
-
-        /* FINALIZAR SECTION */
-        #rek-landing-page #finalizar h2 { font-size: 3.2rem !important; font-weight: 900 !important; margin-bottom: 35px !important; line-height: 1.1 !important; }
-
-        /* 
-           OTIMIZAÇÃO RESPONSIVIDADE CELULAR (APRIMORADA)
-        */
-        @media (max-width: 768px) {
-            #rek-landing-page section { padding: 60px 0 !important; min-height: auto !important; }
-            #rek-landing-page h2 { font-size: 1.8rem !important; line-height: 1.3 !important; margin-bottom: 15px !important; }
-            
-            #rek-landing-page .hero h1 { font-size: clamp(2.2rem, 10vw, 3rem) !important; }
-            #rek-landing-page .hero-logo-box { width: 130px !important; height: 130px !important; margin-bottom: 25px !important; }
-            
-            #rek-landing-page .profile-card { flex-direction: column !important; padding: 35px 20px !important; text-align: center !important; gap: 25px !important; }
-            #rek-landing-page .profile-img { 
-                width: 140px !important; 
-                height: 140px !important; 
-                min-width: 140px !important; 
-                max-width: 140px !important; 
-                min-height: 140px !important; 
-                max-height: 140px !important; 
-                margin: 0 auto !important; 
-                aspect-ratio: 1 / 1 !important; 
-                border-radius: 50% !important;
-                object-fit: cover !important;
-            }
-            #rek-landing-page .profile-info .profile-tag { margin-left: auto !important; margin-right: auto !important; display: table !important; }
-            #rek-landing-page .profile-info h3 { text-align: center !important; font-size: 1.8rem !important; margin-bottom: 15px !important; }
-            #rek-landing-page .profile-info .profile-lead { text-align: center !important; font-size: 1rem !important; }
-            #rek-landing-page .profile-info .profile-desc { text-align: center !important; font-size: 0.95rem !important; }
-            #rek-landing-page .profile-badges { justify-content: center !important; padding-top: 20px !important; }
-            
-            #rek-landing-page .tabs-container { display: flex !important; flex-direction: column !important; width: 100% !important; max-width: 320px !important; margin: 20px auto 30px auto !important; gap: 10px !important; }
-            #rek-landing-page .tab-btn { width: 100% !important; justify-content: center !important; font-size: 0.9rem !important; padding: 10px 16px !important; animation: none !important; }
-            
-            #rek-landing-page .pricing-card { padding: 30px 18px !important; }
-            #rek-landing-page .pricing-card .price { font-size: 2.2rem !important; }
-            #rek-landing-page .pricing-card h3 { font-size: 1.15rem !important; margin-bottom: 12px !important; }
-            #rek-landing-page .ver-detalhes-btn { padding: 6px 14px !important; font-size: 0.8rem !important; }
-            
-            #rek-landing-page .checklist-grid { grid-template-columns: 1fr !important; gap: 15px !important; margin-top: 30px !important; }
-            #rek-landing-page .check-item { padding: 20px !important; }
-            
-            #rek-landing-page .warranty-card { flex-direction: column !important; text-align: center !important; padding: 30px 20px !important; }
-            #rek-landing-page .warranty-content { text-align: center !important; }
-            #rek-landing-page .warranty-content p { text-align: center !important; }
-            
-            #rek-landing-page .countdown-grid { gap: 10px !important; flex-wrap: wrap !important; }
-            #rek-landing-page .count-unit { width: calc(50% - 10px) !important; padding: 15px 0 !important; }
-            #rek-landing-page .count-num { font-size: 2rem !important; }
-            
-            #rek-landing-page .page-dots { padding: 8px 15px !important; gap: 8px !important; bottom: 20px !important; }
-            #rek-landing-page .dot { width: 8px !important; height: 8px !important; }
-            #rek-landing-page .dot.active { width: 20px !important; }
-            
-            #rek-landing-page .side-nav-controls { right: 15px !important; bottom: 80px !important; }
-            #rek-landing-page .nav-ctrl-btn { width: 45px !important; height: 45px !important; }
-            
-            #rek-landing-page #finalizar h2 { font-size: 2rem !important; }
-            #rek-landing-page footer { padding: 40px 0 !important; }
-            #rek-landing-page .footer-grid { grid-template-columns: 1fr !important; text-align: center !important; gap: 30px !important; }
-            #rek-landing-page .footer-brand p, #rek-landing-page .footer-brand h4 { text-align: center !important; margin-left: auto !important; margin-right: auto !important; }
-            #rek-landing-page .footer-contact h4 { text-align: center !important; }
-            #rek-landing-page .contact-item { justify-content: center !important; }
-            #rek-landing-page .footer-bottom { justify-content: center !important; text-align: center !important; flex-direction: column !important; gap: 10px !important; }
-            #rek-landing-page .footer-bottom p { text-align: center !important; }
-
-            #rek-landing-page .btn-cta {
-                padding: 10px 24px !important;
-                font-size: 0.95rem !important;
-            }
-
-            #rek-landing-page .pricing-grid {
-                grid-template-columns: 1fr !important;
-                gap: 20px !important;
-            }
+        #rek-landing-page .page-dots { 
+            position: fixed !important; 
+            bottom: 35px !important; 
+            left: 50% !important; 
+            transform: translateX(-50%) !important; 
+            display: flex !important; 
+            gap: 14px !important; 
+            z-index: 99999 !important; 
+            background: rgba(6, 11, 19, 0.8) !important; 
+            backdrop-filter: blur(14px) !important; 
+            -webkit-backdrop-filter: blur(14px) !important;
+            padding: 10px 22px !important; 
+            border-radius: 60px !important; 
+            border: 1px solid rgba(255, 255, 255, 0.12) !important; 
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5) !important;
+        }
+        #rek-landing-page .dot { 
+            display: inline-block !important; 
+            width: 10px !important; 
+            height: 10px !important; 
+            background: rgba(255, 255, 255, 0.25) !important; 
+            border-radius: 50% !important; 
+            cursor: pointer !important; 
+            transition: all 0.35s ease !important; 
+        }
+        #rek-landing-page .dot.active { 
+            background: #00d1ff !important; 
+            width: 32px !important; 
+            border-radius: 10px !important; 
+            box-shadow: 0 0 12px rgba(0, 209, 255, 0.6) !important;
         }
 
-        /* NOVOS ESTILOS PARA GRADE DE INVESTIMENTO */
-        #rek-landing-page .pricing-grid {
-            display: flex !important;
-            justify-content: center !important;
-            margin-top: 50px !important;
-        }
-        #rek-landing-page .pricing-card {
-            background: #0d141f !important;
-            border: 1px solid rgba(255, 255, 255, 0.08) !important;
-            border-radius: 24px !important;
-            padding: 45px 35px !important;
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important;
-            justify-content: center !important;
-            text-align: center !important;
-            transition: transform 0.3s ease, border-color 0.3s ease !important;
-            position: relative !important;
-            max-width: 620px !important;
-            width: 100% !important;
-        }
-        #rek-landing-page .pricing-card:hover {
-            transform: translateY(-5px) !important;
-            border-color: #00d1ff !important;
-        }
-        #rek-landing-page .pricing-card.featured {
-            border: 2px solid #00ff88 !important;
-            background: linear-gradient(180deg, #0d141f 0%, #082e1e 100%) !important;
-            box-shadow: 0 20px 50px rgba(0, 255, 136, 0.2) !important;
-        }
-        #rek-landing-page .pricing-card.featured:hover {
-            transform: translateY(-5px) !important;
-            box-shadow: 0 25px 60px rgba(0, 255, 136, 0.3) !important;
-        }
-        #rek-landing-page .card-badge {
-            position: absolute !important;
-            top: -15px !important;
-            left: 50% !important;
-            transform: translateX(-50%) !important;
-            background: #00ff88 !important;
-            color: #000 !important;
-            padding: 6px 24px !important;
-            border-radius: 30px !important;
-            font-weight: 800 !important;
-            font-size: 0.8rem !important;
-            text-transform: uppercase !important;
-            white-space: nowrap !important;
-            letter-spacing: 1px !important;
-        }
-        #rek-landing-page .pricing-card h3 { font-size: 1.5rem !important; margin-bottom: 15px !important; color: #fff !important; font-weight: 800 !important; }
-        #rek-landing-page .pricing-card .price { font-size: 3rem !important; font-weight: 900 !important; color: #00d1ff !important; margin: 15px 0 !important; }
-        #rek-landing-page .pricing-card.featured .price { color: #00ff88 !important; }
-        #rek-landing-page .pricing-card .price small { font-size: 1.1rem !important; color: #94a3b8 !important; }
-        #rek-landing-page .pricing-card ul { list-style: none !important; padding: 0 !important; margin: 20px 0 !important; text-align: left !important; flex-grow: 1 !important; }
-        #rek-landing-page .pricing-card li { margin-bottom: 14px !important; color: #cbd5e1 !important; font-size: 0.95rem !important; display: flex !important; gap: 12px !important; align-items: flex-start !important; }
-        #rek-landing-page .pricing-card li i { color: #00ff88 !important; margin-top: 4px !important; flex-shrink: 0 !important; }
-        #rek-landing-page .save-tag { color: #00ff88 !important; font-weight: 700 !important; font-size: 0.95rem !important; margin-top: 10px !important; display: block !important; }
+        /* ==========================================================================
+           OTIMIZAÇÕES RESPONSIVAS MOBILE (TABLET & SMARTPHONE)
+           ========================================================================== */
 
         @media (max-width: 992px) {
+            #rek-landing-page section { 
+                padding: 70px 0 !important; 
+                min-height: auto !important; 
+            }
             #rek-landing-page .pricing-grid { width: 100% !important; }
-            #rek-landing-page .pricing-card { max-width: 100% !important; padding: 35px 20px !important; }
-            #rek-landing-page .pricing-card.featured { transform: none !important; margin: 0 !important; }
-        }
-
-        /* ESTILOS DE ABAS (TABS) PARA ENTREGÁVEIS */
-        #rek-landing-page .tabs-container {
-            margin-top: 30px !important;
-            margin-bottom: 40px !important;
-            display: flex !important;
-            justify-content: center !important;
-            gap: 12px !important;
-            flex-wrap: wrap !important;
-        }
-        @keyframes tabFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-4px); }
-        }
-        #rek-landing-page .tab-btn {
-            background: rgba(255, 255, 255, 0.03) !important;
-            border: 1px solid rgba(255, 255, 255, 0.08) !important;
-            color: #cbd5e1 !important;
-            padding: 12px 24px !important;
-            border-radius: 50px !important;
-            font-size: 0.95rem !important;
-            font-weight: 700 !important;
-            cursor: pointer !important;
-            transition: all 0.3s ease !important;
-            display: flex !important;
-            align-items: center !important;
-            gap: 10px !important;
-            outline: none !important;
-            animation: tabFloat 3s ease-in-out infinite;
-        }
-        #rek-landing-page .tab-btn:nth-child(1) { animation-delay: 0s; }
-        #rek-landing-page .tab-btn:nth-child(2) { animation-delay: 0.4s; }
-        #rek-landing-page .tab-btn:nth-child(3) { animation-delay: 0.8s; }
-
-        #rek-landing-page .tab-btn:hover {
-            border-color: #00d1ff !important;
-            color: #00d1ff !important;
-            background: rgba(0, 209, 255, 0.05) !important;
-            transform: translateY(-4px) scale(1.05) !important;
-            box-shadow: 0 5px 15px rgba(0, 209, 255, 0.15) !important;
-        }
-        @keyframes activeCyanPulse {
-            0%, 100% { 
-                transform: translateY(-2px) scale(1); 
-                box-shadow: 0 0 15px rgba(0, 209, 255, 0.4); 
+            #rek-landing-page .pricing-card { max-width: 100% !important; }
+            #rek-landing-page .phones-container-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 16px !important;
             }
-            50% { 
-                transform: translateY(-6px) scale(1.02); 
-                box-shadow: 0 0 25px rgba(0, 209, 255, 0.7); 
+            #rek-proof-lightbox .lightbox-arrow.prev { left: 10px !important; }
+            #rek-proof-lightbox .lightbox-arrow.next { right: 10px !important; }
+        }
+
+        @media (max-width: 768px) {
+            #rek-landing-page .lp-container {
+                padding: 0 18px !important;
             }
-        }
-        @keyframes activeGreenPulse {
-            0%, 100% { 
-                transform: translateY(-2px) scale(1); 
-                box-shadow: 0 0 15px rgba(0, 255, 136, 0.4); 
+            #rek-landing-page section { 
+                padding: 55px 0 !important; 
+                min-height: auto !important; 
             }
-            50% { 
-                transform: translateY(-6px) scale(1.02); 
-                box-shadow: 0 0 25px rgba(0, 255, 136, 0.7); 
+            #rek-landing-page h2 { 
+                font-size: clamp(1.45rem, 6vw, 1.95rem) !important; 
+                line-height: 1.25 !important; 
+                margin-bottom: 12px !important; 
             }
+            #rek-landing-page p {
+                font-size: 0.95rem !important;
+                line-height: 1.6 !important;
+            }
+            
+            /* HERO MOBILE */
+            #rek-landing-page .hero { 
+                height: auto !important;
+                min-height: 100vh !important;
+                min-height: 100svh !important;
+                padding: 60px 0 80px 0 !important;
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+            }
+            #rek-landing-page .hero-logo-box { 
+                width: 115px !important; 
+                height: 115px !important; 
+                border-radius: 28px !important;
+                margin-bottom: 22px !important; 
+            }
+            #rek-landing-page .hero .subtitle {
+                font-size: 0.85rem !important;
+                letter-spacing: 2px !important;
+                margin-bottom: 10px !important;
+            }
+            #rek-landing-page .hero h1 { 
+                font-size: clamp(2.3rem, 11vw, 3.4rem) !important; 
+                letter-spacing: -1px !important;
+                margin-bottom: 10px !important;
+            }
+            #rek-landing-page .hero .mova-mundo {
+                font-size: 0.78rem !important;
+                letter-spacing: 1.5px !important;
+                line-height: 1.55 !important;
+                padding: 0 8px !important;
+            }
+
+            /* ESCOPO MOBILE */
+            #rek-landing-page .checklist-grid { 
+                grid-template-columns: 1fr !important; 
+                gap: 12px !important; 
+                margin-top: 25px !important; 
+            }
+            #rek-landing-page .check-item { 
+                padding: 16px 14px !important; 
+                border-radius: 14px !important;
+                gap: 14px !important;
+                align-items: flex-start !important;
+            }
+            #rek-landing-page .check-item i {
+                width: 38px !important;
+                height: 38px !important;
+                min-width: 38px !important;
+                font-size: 1.1rem !important;
+                border-radius: 10px !important;
+            }
+            #rek-landing-page .check-item div strong {
+                font-size: 0.98rem !important;
+                margin-bottom: 4px !important;
+                line-height: 1.35 !important;
+            }
+            #rek-landing-page .check-item div span {
+                font-size: 0.88rem !important;
+                line-height: 1.48 !important;
+            }
+
+            /* PROVAS SOCIAIS / RESULTADOS MOBILE */
+            #rek-landing-page #resultados {
+                padding: 55px 0 !important;
+            }
+            #rek-landing-page #resultados h2 {
+                font-size: clamp(1.75rem, 7.2vw, 2.4rem) !important;
+                line-height: 1.2 !important;
+                margin-bottom: 24px !important;
+            }
+            #rek-landing-page .proof-card-box {
+                padding: 18px 8px 22px 8px !important;
+                border-radius: 18px !important;
+                border: 1px solid rgba(255, 255, 255, 0.06) !important;
+            }
+            #rek-landing-page .proof-box-heading {
+                font-size: 0.95rem !important;
+                margin-bottom: 16px !important;
+                gap: 6px !important;
+                padding: 0 4px !important;
+                line-height: 1.35 !important;
+            }
+            #rek-landing-page .proof-box-heading i {
+                font-size: 1.05rem !important;
+            }
+            #rek-landing-page .phones-container-grid {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 8px 6px !important;
+                width: 100% !important;
+            }
+            #rek-landing-page .phone-mockup {
+                border: none !important;
+                box-shadow: none !important;
+                background: transparent !important;
+                border-radius: 8px !important;
+                overflow: hidden !important;
+            }
+            #rek-landing-page .phone-screen-image {
+                border: none !important;
+                border-radius: 8px !important;
+                width: 100% !important;
+                aspect-ratio: 1 / 1.62 !important;
+                object-fit: cover !important;
+                object-position: center top !important;
+                transform: scale(1.09) !important;
+                transform-origin: center 10% !important;
+                display: block !important;
+            }
+            #rek-landing-page .phone-idx-badge {
+                top: 5px !important;
+                left: 5px !important;
+                font-size: 0.58rem !important;
+                padding: 2px 5px !important;
+                border: none !important;
+                background: rgba(0, 0, 0, 0.65) !important;
+                border-radius: 4px !important;
+            }
+            @media (max-width: 480px) {
+                #rek-landing-page .lp-container {
+                    padding: 0 10px !important;
+                }
+                #rek-landing-page .proof-card-box {
+                    padding: 16px 5px 20px 5px !important;
+                    border-radius: 14px !important;
+                }
+                #rek-landing-page .phones-container-grid {
+                    grid-template-columns: repeat(2, 1fr) !important;
+                    gap: 6px 5px !important;
+                }
+                #rek-landing-page .phone-mockup {
+                    border: none !important;
+                    box-shadow: none !important;
+                    border-radius: 6px !important;
+                }
+                #rek-landing-page .phone-screen-image {
+                    border-radius: 6px !important;
+                }
+            }
+            #rek-proof-lightbox {
+                padding: 8px !important;
+            }
+            #rek-proof-lightbox .lightbox-img-frame {
+                border-radius: 10px !important;
+                box-shadow: none !important;
+                border: none !important;
+            }
+            #rek-proof-lightbox img {
+                max-width: 96vw !important;
+                max-height: 88vh !important;
+            }
+            #rek-proof-lightbox .lightbox-top-bar {
+                max-width: 100% !important;
+            }
+            #rek-proof-lightbox .lightbox-arrow {
+                width: 42px !important;
+                height: 42px !important;
+                font-size: 0.95rem !important;
+            }
+            #rek-proof-lightbox .lightbox-arrow.prev { left: 6px !important; }
+            #rek-proof-lightbox .lightbox-arrow.next { right: 6px !important; }
+
+            /* PREÇO MOBILE */
+            #rek-landing-page .pricing-card { 
+                padding: 34px 18px 28px 18px !important; 
+                border-radius: 20px !important;
+            }
+            #rek-landing-page .price-box {
+                margin: 18px 0 !important;
+                padding: 20px 14px !important;
+                border-radius: 15px !important;
+            }
+            #rek-landing-page .price-amount { 
+                font-size: clamp(2.2rem, 9vw, 2.9rem) !important; 
+            }
+            #rek-landing-page .pricing-features-list {
+                margin: 0 0 20px 0 !important;
+                gap: 8px !important;
+            }
+            #rek-landing-page .pricing-features-list li {
+                padding: 9px 12px !important;
+                font-size: 0.88rem !important;
+                line-height: 1.4 !important;
+                gap: 10px !important;
+            }
+            #rek-landing-page .pricing-features-list li i {
+                font-size: 0.88rem !important;
+                margin-top: 2px !important;
+            }
+
+            /* COUNTDOWN MOBILE (LINHA ÚNICA MODERNA E COMPACTA) */
+            #rek-landing-page .countdown-grid { 
+                display: grid !important;
+                grid-template-columns: repeat(4, 1fr) !important;
+                gap: 8px !important; 
+                margin: 30px auto !important; 
+                max-width: 380px !important;
+                width: 100% !important;
+            }
+            #rek-landing-page .count-unit { 
+                width: 100% !important; 
+                padding: 14px 4px !important; 
+                border-radius: 12px !important;
+                border-width: 1.5px !important;
+            }
+            #rek-landing-page .count-num { 
+                font-size: clamp(1.45rem, 5.5vw, 1.85rem) !important; 
+            }
+            #rek-landing-page .count-label {
+                font-size: 0.65rem !important;
+                margin-top: 3px !important;
+                letter-spacing: 0.5px !important;
+            }
+
+            /* BIO MOBILE */
+            #rek-landing-page .profile-card { 
+                flex-direction: column !important; 
+                padding: 28px 16px !important; 
+                text-align: center !important; 
+                gap: 20px !important; 
+                border-radius: 20px !important;
+                margin: 25px auto !important;
+            }
+            #rek-landing-page .profile-img { 
+                width: 125px !important; 
+                height: 125px !important; 
+                min-width: 125px !important; 
+                max-width: 125px !important; 
+                min-height: 125px !important; 
+                max-height: 125px !important; 
+                margin: 0 auto !important; 
+                border-width: 3px !important;
+            }
+            #rek-landing-page .profile-info .profile-tag { 
+                margin: 0 auto 14px auto !important; 
+                display: table !important; 
+            }
+            #rek-landing-page .profile-info h3 { 
+                text-align: center !important; 
+                font-size: clamp(1.4rem, 5.5vw, 1.8rem) !important; 
+                margin-bottom: 12px !important; 
+            }
+            #rek-landing-page .profile-info .profile-lead { 
+                text-align: center !important; 
+                font-size: 0.95rem !important; 
+                line-height: 1.55 !important;
+                margin-bottom: 14px !important;
+            }
+            #rek-landing-page .profile-info .profile-desc { 
+                text-align: center !important; 
+                font-size: 0.88rem !important; 
+                line-height: 1.6 !important;
+                margin-bottom: 20px !important;
+            }
+            #rek-landing-page .profile-badges { 
+                flex-direction: column !important;
+                width: 100% !important;
+                gap: 8px !important;
+                padding-top: 18px !important; 
+            }
+            #rek-landing-page .profile-badge-item {
+                width: 100% !important;
+                justify-content: center !important;
+                padding: 10px 14px !important;
+                font-size: 0.88rem !important;
+            }
+
+            /* BOTÕES CTA MOBILE */
+            #rek-landing-page .btn-cta {
+                width: 100% !important;
+                max-width: 100% !important;
+                padding: 15px 18px !important;
+                font-size: clamp(0.85rem, 3.8vw, 0.98rem) !important;
+                letter-spacing: 0.3px !important;
+                min-height: 52px !important;
+                line-height: 1.3 !important;
+                text-align: center !important;
+            }
+
+            /* FLOATING CONTROLS COM SAFE-AREA */
+            #rek-landing-page .side-nav-controls { 
+                right: 12px !important; 
+                bottom: calc(75px + env(safe-area-inset-bottom, 0px)) !important; 
+                gap: 8px !important;
+            }
+            #rek-landing-page .nav-ctrl-btn { 
+                width: 42px !important; 
+                height: 42px !important; 
+                background: rgba(0, 209, 255, 0.85) !important;
+                backdrop-filter: blur(8px) !important;
+                -webkit-backdrop-filter: blur(8px) !important;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 209, 255, 0.25) !important;
+            }
+            #rek-landing-page .nav-ctrl-btn i { font-size: 0.95rem !important; }
+
+            #rek-landing-page .page-dots { 
+                bottom: calc(14px + env(safe-area-inset-bottom, 0px)) !important; 
+                padding: 8px 16px !important; 
+                gap: 10px !important; 
+                background: rgba(6, 11, 19, 0.85) !important;
+                backdrop-filter: blur(12px) !important;
+                -webkit-backdrop-filter: blur(12px) !important;
+                border: 1px solid rgba(255, 255, 255, 0.12) !important;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
+            }
+            #rek-landing-page .dot { 
+                width: 8px !important; 
+                height: 8px !important; 
+                position: relative !important;
+            }
+            /* Aumenta o alvo de toque no celular para 36px sem alterar o ponto visual */
+            #rek-landing-page .dot::after {
+                content: '' !important;
+                position: absolute !important;
+                top: -12px !important;
+                bottom: -12px !important;
+                left: -8px !important;
+                right: -8px !important;
+            }
+            #rek-landing-page .dot.active { 
+                width: 22px !important; 
+            }
+
+            /* RODAPÉ MOBILE COM CLEARANCE PARA AS BARRAS FLUTUANTES */
+            #rek-landing-page footer { 
+                padding: 40px 0 calc(75px + env(safe-area-inset-bottom, 0px)) 0 !important; 
+            }
+            #rek-landing-page .footer-grid { 
+                grid-template-columns: 1fr !important; 
+                text-align: center !important; 
+                gap: 28px !important; 
+            }
+            #rek-landing-page .footer-brand p, 
+            #rek-landing-page .footer-brand h4 { 
+                text-align: center !important; 
+                margin-left: auto !important; 
+                margin-right: auto !important; 
+            }
+            #rek-landing-page .footer-contact h4 { text-align: center !important; }
+            #rek-landing-page .contact-item { 
+                justify-content: center !important; 
+                font-size: 0.9rem !important;
+            }
+            #rek-landing-page .footer-bottom { 
+                justify-content: center !important; 
+                text-align: center !important; 
+                flex-direction: column !important; 
+                gap: 10px !important; 
+            }
+            #rek-landing-page .footer-bottom p { text-align: center !important; }
         }
 
-        #rek-landing-page .tab-btn.active {
-            background: #00d1ff !important;
-            color: #000000 !important;
-            border-color: #00d1ff !important;
-            box-shadow: 0 0 20px rgba(0, 209, 255, 0.3) !important;
-            transform: translateY(-2px) !important;
-            animation: activeCyanPulse 3s ease-in-out infinite !important;
-        }
-        #rek-landing-page .tab-btn[data-tab="essencial"].active {
-            background: #00ff88 !important;
-            color: #000000 !important;
-            border-color: #00ff88 !important;
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.3) !important;
-            transform: translateY(-2px) !important;
-            animation: activeGreenPulse 3s ease-in-out infinite !important;
-        }
-
-        /* ESTILO E ANIMAÇÃO PARA O LINK DE DETALHES */
-        #rek-landing-page .ver-detalhes-btn {
-            display: inline-flex !important;
-            align-items: center !important;
-            gap: 5px !important;
-            color: #00d1ff !important;
-            font-size: 0.8rem !important;
-            font-weight: 500 !important;
-            text-decoration: none !important;
-            background: rgba(0, 209, 255, 0.05) !important;
-            border: 1px dashed rgba(0, 209, 255, 0.3) !important;
-            padding: 4px 12px !important;
-            border-radius: 30px !important;
-            margin-top: 10px !important;
-            margin-bottom: 20px !important;
-            cursor: pointer !important;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
-            animation: detailsWiggle 3.5s ease-in-out infinite !important;
-        }
-        #rek-landing-page .pricing-card.featured .ver-detalhes-btn {
-            color: #00ff88 !important;
-            background: rgba(0, 255, 136, 0.05) !important;
-            border-color: rgba(0, 255, 136, 0.3) !important;
-        }
-        #rek-landing-page .ver-detalhes-btn i {
-            font-size: 0.8rem !important;
-            transition: transform 0.3s ease !important;
-        }
-        #rek-landing-page .ver-detalhes-btn:hover {
-            color: #000000 !important;
-            background: #00d1ff !important;
-            border-color: #00d1ff !important;
-            border-style: solid !important;
-            transform: translateY(-3px) scale(1.05) !important;
-            box-shadow: 0 10px 20px rgba(0, 209, 255, 0.25) !important;
-            animation: none !important;
-        }
-        #rek-landing-page .pricing-card.featured .ver-detalhes-btn:hover {
-            color: #000000 !important;
-            background: #00ff88 !important;
-            border-color: #00ff88 !important;
-            box-shadow: 0 10px 20px rgba(0, 255, 136, 0.25) !important;
-        }
-        #rek-landing-page .ver-detalhes-btn:hover i {
-            transform: scale(1.2) rotate(10deg) !important;
-        }
-
-        @keyframes detailsWiggle {
-            0%, 100% { transform: translateY(0) scale(1); }
-            45% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-4px) scale(1.03); }
-            55% { transform: translateY(1px) scale(0.98); }
-            60% { transform: translateY(-2px) scale(1.01); }
-            65% { transform: translateY(0) scale(1); }
-        }
-
-        #rek-landing-page .tab-content {
-            display: none !important;
-        }
-        #rek-landing-page .tab-content.active {
-            display: grid !important;
-        }
-
-        /* AJUSTE PARA TELAS MUITO PEQUENAS (IPHONE SE / MINI) */
+        /* AJUSTE PARA TELAS PEQUENAS (SMARTPHONES COMPACTOS - ATÉ 380px) */
         @media (max-width: 380px) {
-            #rek-landing-page .hero h1 { font-size: 1.8rem !important; }
-            #rek-landing-page .price-new { font-size: 2.5rem !important; }
-            #rek-landing-page .page-dots { display: none !important; } /* Oculta dots em telas minúsculas para priorizar CTA */
-            #rek-landing-page .tab-btn { padding: 10px 16px !important; font-size: 0.85rem !important; }
+            #rek-landing-page .hero h1 { font-size: 2.1rem !important; }
+            #rek-landing-page .hero .mova-mundo { font-size: 0.72rem !important; letter-spacing: 1px !important; }
+            #rek-landing-page .hero .subtitle { font-size: 0.8rem !important; letter-spacing: 1.5px !important; }
+            #rek-landing-page .pricing-card { padding: 26px 14px 22px 14px !important; }
+            #rek-landing-page .price-amount { font-size: 2.1rem !important; }
+            #rek-landing-page .countdown-grid { gap: 6px !important; }
+            #rek-landing-page .count-num { font-size: 1.35rem !important; }
+            #rek-landing-page .side-nav-controls { display: none !important; } /* Libera espaço total em telas micro */
         }
     </style>
 
@@ -666,10 +1326,10 @@
     <!-- PONTOS DE NAVEGAÇÃO -->
     <div class="page-dots">
         <a href="#hero" class="dot active" data-section="hero" title="Início"></a>
-        <a href="#escopo" class="dot" data-section="escopo" title="Entregáveis"></a>
-        <a href="#garantia" class="dot" data-section="garantia" title="Garantia"></a>
-        <a href="#preco" class="dot" data-section="preco" title="Investimento"></a>
-        <a href="#finalizar" class="dot" data-section="finalizar" title="Oportunidade"></a>
+        <a href="#escopo" class="dot" data-section="escopo" title="Atuação"></a>
+        <a href="#resultados" class="dot" data-section="resultados" title="Resultados"></a>
+        <a href="#preco" class="dot" data-section="preco" title="Condições"></a>
+        <a href="#finalizar" class="dot" data-section="finalizar" title="Parceria"></a>
         <a href="#bio" class="dot" data-section="bio" title="Sobre"></a>
         <a href="#contato" class="dot" data-section="contato" title="Contato"></a>
     </div>
@@ -680,121 +1340,234 @@
             <div class="hero-logo-box">
                 <img src="https://rek.leorek.com.br/wp-content/uploads/2025/10/logo_rek_branca_bx.png" alt="Leonardo Rek Logo" decoding="async">
             </div>
-            <span class="subtitle">Leonardo Rek - Estrategista Digital</span>
-            <h1>URBANO NORTE</h1>
-            <span class="mova-mundo">PROPOSTA COMERCIAL • APLICATIVO DE MOBILIDADE</span>
+            <span class="subtitle">Leonardo Rek • Estrategista Digital</span>
+            <h1>ALINE</h1>
+            <span class="mova-mundo">PARCERIA ESTRATÉGICA DIGITAL • MENTORIA DE BELEZA & ESTÉTICA</span>
         </div>
     </section>
 
     <!-- ESCOPO -->
     <section id="escopo">
         <div class="lp-container">
-            <h2 class="reveal" style="color: #00d1ff !important; margin-bottom: 10px !important;">O QUE ESTÁ INCLUSO NO SEU PLANO?</h2>
-            <p class="reveal" style="text-align: center !important; color: #94a3b8 !important; max-width: 700px !important; margin: 0 auto 40px auto !important;">Confira em detalhes todas as entregas estratégicas e serviços inclusos no contrato para acelerar as corridas e a frota do Urbano Norte.</p>
+            <span class="section-tag reveal">ESCOPO & DIRECIONAMENTO</span>
+            <h2 class="reveal" style="color: #00d1ff !important; margin-bottom: 12px !important;">ATUAÇÃO ESTRATÉGICA COMPLETA</h2>
+            <p class="reveal" style="max-width: 780px !important; margin: 0 auto 35px auto !important;">Mais do que serviços pontuais, uma parceria dedicada a planejar, construir e executar toda a estrutura digital necessária para transformar sua audiência e tráfego em alunas e vendas recorrentes. O escopo é flexível e contínuo, adaptando-se às prioridades, métricas e oportunidades de cada etapa do projeto.</p>
             
-            <div class="checklist-grid reveal" style="display: grid !important;">
+            <div class="checklist-grid reveal">
                 <div class="check-item">
-                    <i class="fas fa-chart-line"></i>
+                    <i class="fas fa-chess-knight"></i>
                     <div>
-                        <strong>Gestão Profissional de Tráfego Pago:</strong>
-                        <span>Criação, otimização e controle contínuo de campanhas na Meta Ads (Instagram/Facebook) e Google Ads para atração constante.</span>
+                        <strong>Estrategista Digital & Planejamento:</strong>
+                        <span>Participação ativa no planejamento estratégico, direcionamento de ações e acompanhamento da execução de todo o projeto.</span>
                     </div>
                 </div>
                 <div class="check-item">
-                    <i class="fas fa-car-side"></i>
+                    <i class="fas fa-filter"></i>
                     <div>
-                        <strong>Captação de Passageiros & Motoristas:</strong>
-                        <span>Campanhas segmentadas focadas na baixa de custos de aquisição, promovendo downloads do app e cadastro de novos motoristas.</span>
+                        <strong>Desenvolvimento de Funis de Vendas:</strong>
+                        <span>Criação e aprimoramento de funis estratégicos para transformar seguidores, visualizações e visitantes em alunas pagantes.</span>
                     </div>
                 </div>
                 <div class="check-item">
-                    <i class="fas fa-map-marked-alt"></i>
+                    <i class="fas fa-desktop"></i>
                     <div>
-                        <strong>Geo-Targeting Estratégico Local:</strong>
-                        <span>Anúncios direcionados por bairros, cidades e regiões prioritárias de operação do aplicativo Urbano Norte.</span>
+                        <strong>Criação ou Otimização de Site e Páginas:</strong>
+                        <span>Estruturação ou reformulação das suas páginas de vendas e captura com foco em clareza, autoridade e alta taxa de conversão.</span>
                     </div>
                 </div>
                 <div class="check-item">
-                    <i class="fas fa-bullseye"></i>
+                    <i class="fas fa-bullhorn"></i>
                     <div>
-                        <strong>Fortalecimento e Lembrança de Marca:</strong>
-                        <span>Ações de autoridade e campanhas estratégicas para consolidar a presença, o reconhecimento e a lembrança da marca Urbano Norte na região.</span>
-                    </div>
-                </div>
-                <div class="check-item">
-                    <i class="fas fa-calculator"></i>
-                    <div>
-                        <strong>Otimização do Investimento:</strong>
-                        <span>Gestão diária da verba de tráfego para obter o menor Custo por Instalação (CPI) e Custo por Corrida do mercado.</span>
-                    </div>
-                </div>
-                <div class="check-item">
-                    <i class="fas fa-video"></i>
-                    <div>
-                        <strong>Reuniões de Alinhamento e Relatórios:</strong>
-                        <span>Encontros online periódicos para análise das métricas, validação de hipóteses e planejamento das próximas metas.</span>
+                        <strong>Gestão Estratégica de Tráfego Pago:</strong>
+                        <span>Campanhas segmentadas no Meta Ads e Google Ads orientadas à atração constante de público qualificado para a mentoria.</span>
                     </div>
                 </div>
                 <div class="check-item">
                     <i class="fas fa-photo-video"></i>
                     <div>
-                        <strong>Direcionamento no Conteúdo Estratégico para Tráfego Pago:</strong>
-                        <span>Orientação técnica e criativa na produção de vídeos, fotos e roteiros otimizados para potencializar a conversão dos anúncios.</span>
+                        <strong>Estratégia de Conteúdo (Instagram & YouTube):</strong>
+                        <span>Direcionamento editorial e criativo de conteúdos estratégicos para gerar forte autoridade no nicho de beleza e desejo de compra.</span>
                     </div>
                 </div>
                 <div class="check-item">
-                    <i class="fas fa-lightbulb"></i>
+                    <i class="fas fa-layer-group"></i>
                     <div>
-                        <strong>Direcionamento Estratégico & Insights:</strong>
-                        <span>Recomendações de promoções, cupons de desconto para usuários e estratégias de retenção da base do aplicativo.</span>
+                        <strong>Direcionamento de Plataformas & Ferramentas:</strong>
+                        <span>Orientação e estruturação das ferramentas digitais, checkouts, áreas de membros e integrações necessárias para vender com fluidez.</span>
+                    </div>
+                </div>
+                <div class="check-item">
+                    <i class="fas fa-chart-line"></i>
+                    <div>
+                        <strong>Otimização Contínua Baseada em Dados:</strong>
+                        <span>Análise frequente das métricas da operação para refinar mensagens, eliminar gargalos e potencializar os resultados de cada ação.</span>
+                    </div>
+                </div>
+                <div class="check-item">
+                    <i class="fas fa-handshake"></i>
+                    <div>
+                        <strong>Atuação Dinâmica & Oportunidades:</strong>
+                        <span>Escopo flexível ajustado de acordo com as necessidades reais do projeto e as oportunidades identificadas ao longo da operação.</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- PROVAS SOCIAIS / RESULTADOS -->
+    <section id="resultados">
+        <div class="lp-container" style="max-width: 1240px !important;">
+            <div style="text-align: center !important;">
+                <span class="proof-pill-badge reveal">PROVA SOCIAL</span>
+            </div>
+            <h2 class="reveal">Veja os resultados de quem<br class="hidden sm:inline"> decidiu prosperar.</h2>
+            
+            <div class="proof-card-box reveal">
+                <div class="phones-container-grid" id="phones-slider">
+                    <!-- PHONE #01 -->
+                    <div class="phone-mockup" data-proof-index="0" title="Ver comprovante #01">
+                        <span class="phone-idx-badge">#01</span>
+                        <img src="https://rek.leorek.com.br/wp-content/uploads/2025/10/IMG-20251014-WA0034.jpg" alt="Comprovante de Resultado #01" class="phone-screen-image" loading="lazy" />
+                    </div>
+
+                    <!-- PHONE #02 -->
+                    <div class="phone-mockup" data-proof-index="1" title="Ver comprovante #02">
+                        <span class="phone-idx-badge">#02</span>
+                        <img src="https://rek.leorek.com.br/wp-content/uploads/2025/10/IMG-20251018-WA0002.jpg" alt="Comprovante de Resultado #02" class="phone-screen-image" loading="lazy" />
+                    </div>
+
+                    <!-- PHONE #03 -->
+                    <div class="phone-mockup" data-proof-index="2" title="Ver comprovante #03">
+                        <span class="phone-idx-badge">#03</span>
+                        <img src="https://rek.leorek.com.br/wp-content/uploads/2025/10/IMG-20251018-WA0004.jpg" alt="Comprovante de Resultado #03" class="phone-screen-image" loading="lazy" />
+                    </div>
+
+                    <!-- PHONE #04 -->
+                    <div class="phone-mockup" data-proof-index="3" title="Ver comprovante #04">
+                        <span class="phone-idx-badge">#04</span>
+                        <img src="https://rek.leorek.com.br/wp-content/uploads/2025/10/IMG-20251018-WA0005.jpg" alt="Comprovante de Resultado #04" class="phone-screen-image" loading="lazy" />
+                    </div>
+
+                    <!-- PHONE #05 -->
+                    <div class="phone-mockup" data-proof-index="4" title="Ver comprovante #05">
+                        <span class="phone-idx-badge">#05</span>
+                        <img src="https://rek.leorek.com.br/wp-content/uploads/2025/10/IMG-20251018-WA0006.jpg" alt="Comprovante de Resultado #05" class="phone-screen-image" loading="lazy" />
+                    </div>
+
+                    <!-- PHONE #06 -->
+                    <div class="phone-mockup" data-proof-index="5" title="Ver comprovante #06">
+                        <span class="phone-idx-badge">#06</span>
+                        <img src="https://rek.leorek.com.br/wp-content/uploads/2025/10/IMG-20251018-WA0008.jpg" alt="Comprovante de Resultado #06" class="phone-screen-image" loading="lazy" />
+                    </div>
+
+                    <!-- PHONE #07 -->
+                    <div class="phone-mockup" data-proof-index="6" title="Ver comprovante #07">
+                        <span class="phone-idx-badge">#07</span>
+                        <img src="https://rek.leorek.com.br/wp-content/uploads/2025/10/IMG-20251018-WA0009.jpg" alt="Comprovante de Resultado #07" class="phone-screen-image" loading="lazy" />
+                    </div>
+
+                    <!-- PHONE #08 -->
+                    <div class="phone-mockup" data-proof-index="7" title="Ver comprovante #08">
+                        <span class="phone-idx-badge">#08</span>
+                        <img src="https://rek.leorek.com.br/wp-content/uploads/2025/10/IMG-20251018-WA0011.jpg" alt="Comprovante de Resultado #08" class="phone-screen-image" loading="lazy" />
+                    </div>
+
+                    <!-- PHONE #09 -->
+                    <div class="phone-mockup" data-proof-index="8" title="Ver comprovante #09">
+                        <span class="phone-idx-badge">#09</span>
+                        <img src="https://rek.leorek.com.br/wp-content/uploads/2025/10/IMG-20251018-WA0012.jpg" alt="Comprovante de Resultado #09" class="phone-screen-image" loading="lazy" />
+                    </div>
+
+                    <!-- PHONE #10 -->
+                    <div class="phone-mockup" data-proof-index="9" title="Ver comprovante #10">
+                        <span class="phone-idx-badge">#10</span>
+                        <img src="https://rek.leorek.com.br/wp-content/uploads/2025/10/IMG-20251018-WA0013.jpg" alt="Comprovante de Resultado #10" class="phone-screen-image" loading="lazy" />
+                    </div>
+
+                    <!-- PHONE #11 -->
+                    <div class="phone-mockup" data-proof-index="10" title="Ver comprovante #11">
+                        <span class="phone-idx-badge">#11</span>
+                        <img src="https://rek.leorek.com.br/wp-content/uploads/2025/10/IMG-20251018-WA0016.jpg" alt="Comprovante de Resultado #11" class="phone-screen-image" loading="lazy" />
+                    </div>
+
+                    <!-- PHONE #12 -->
+                    <div class="phone-mockup" data-proof-index="11" title="Ver comprovante #12">
+                        <span class="phone-idx-badge">#12</span>
+                        <img src="https://rek.leorek.com.br/wp-content/uploads/2025/10/IMG-20251018-WA0017.jpg" alt="Comprovante de Resultado #12" class="phone-screen-image" loading="lazy" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL EM ALTA RESOLUÇÃO -->
+    <div id="rek-proof-lightbox" role="dialog" aria-modal="true" aria-label="Visualizador de Comprovante de Resultado">
+        <div class="lightbox-content-box">
+            <div class="lightbox-top-bar">
+                <div class="lightbox-counter" id="lightbox-counter">
+                    <i class="fas fa-shield-halved"></i>
+                    <span id="lightbox-counter-text">Comprovante 01 de 12</span>
+                </div>
+                <button type="button" class="lightbox-close-btn" id="lightbox-close-btn" title="Fechar (Esc)">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="lightbox-img-frame">
+                <img id="lightbox-current-img" src="" alt="Comprovante de Resultado Ampliado" />
+                <button type="button" class="lightbox-arrow prev" id="lightbox-prev-btn" title="Comprovante anterior (Seta esquerda)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button type="button" class="lightbox-arrow next" id="lightbox-next-btn" title="Próximo comprovante (Seta direita)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- PREÇO -->
     <section id="preco">
         <div class="lp-container">
             <!-- INVESTIMENTO DO PROJETO COM ÂNCORA DE NAVEGAÇÃO -->
-            <span id="proposta" class="section-tag reveal" style="color: #00ff88 !important; text-shadow: 0 0 10px rgba(0, 255, 136, 0.3) !important; scroll-margin-top: 100px !important;">PROPOSTA PERSONALIZADA</span>
-            <h2 class="reveal" style="margin-bottom: 15px !important;">INVESTIMENTO URBANO NORTE</h2>
-            <p class="reveal" style="max-width: 650px !important; margin: 0 auto 40px auto !important;">Plano exclusivo de aceleração de tráfego pago.</p>
+            <span id="proposta" class="section-tag reveal" style="color: #00ff88 !important; text-shadow: 0 0 12px rgba(0, 255, 136, 0.4) !important; scroll-margin-top: 50px !important;">CONDIÇÕES COMERCIAIS</span>
+            <h2 class="reveal" style="margin-bottom: 12px !important;">PARCERIA ESTRATÉGICA DIGITAL</h2>
+            <p class="reveal" style="max-width: 680px !important; margin: 0 auto 35px auto !important;">Modelo de coprodução e estratégia completa, garantindo alinhamento total com o sucesso e o crescimento da sua mentoria.</p>
             
             <div class="pricing-grid reveal">
                 <!-- Single Featured Option -->
-                <div class="pricing-card featured" id="pricing-card-urbano">
-                    <span class="card-badge">PROPOSTA EXCLUSIVA</span>
-                    <h3 style="margin-top: 10px !important; font-size: 1.6rem !important;">GESTÃO DE TRÁFEGO PAGO</h3>
+                <div class="pricing-card featured" id="pricing-card-proposta">
+                    <span class="card-badge">PARCERIA COMPLETA</span>
+                    <h3 style="margin-top: 10px !important;">ESTRATÉGIA DIGITAL & COPRODUÇÃO</h3>
                     
-                    <div class="price-box" style="margin: 20px 0 !important; padding: 22px !important; background: rgba(0, 0, 0, 0.3) !important; border-radius: 16px !important; border: 1px solid rgba(0, 255, 136, 0.2) !important; width: 100% !important;">
-                        <div style="font-size: 0.85rem !important; color: #94a3b8 !important; text-transform: uppercase !important; letter-spacing: 1px !important; margin-bottom: 5px !important; font-weight: 700 !important;">Honorários do Gestor de Tráfego</div>
-                        <div class="price" style="color: #00ff88 !important; font-size: 3.2rem !important; font-weight: 900 !important; margin: 0 !important; line-height: 1 !important;">
-                            R$ 1.350<small style="font-size: 1.1rem !important; color: #cbd5e1 !important;"> /mês</small>
+                    <div class="price-box">
+                        <div class="price-type-label">Mensalidade Estratégica</div>
+                        <div class="price-amount">
+                            R$ 1.950<small> /mês</small>
                         </div>
-                        <div style="margin-top: 15px !important; padding-top: 12px !important; border-top: 1px dashed rgba(255, 255, 255, 0.15) !important; font-size: 1.05rem !important; color: #00d1ff !important; font-weight: 700 !important;">
-                            + R$ 1.500,00 /mês <span style="color: #94a3b8 !important; font-weight: 400 !important; font-size: 0.9rem !important;">(investimento direto em anúncios)</span>
+                        <div class="coproducao-tag">
+                            <span class="coprod-main">+ 25% de Coprodução</span>
+                            <span class="coprod-desc">(sobre as vendas faturadas no projeto)</span>
                         </div>
                     </div>
 
-                    <span class="save-tag" style="color: #00ff88 !important; margin-bottom: 15px !important; font-size: 1rem !important; display: block !important; text-align: center !important; font-weight: 700 !important;">O que está incluso na sua proposta:</span>
-                    <ul style="width: 100% !important; text-align: center !important; margin-bottom: 25px !important; display: flex !important; flex-direction: column !important; align-items: center !important; gap: 10px !important; padding: 0 !important;">
-                        <li style="display: flex !important; align-items: center !important; justify-content: center !important; gap: 8px !important; color: #ffffff !important; font-size: 0.95rem !important; text-align: center !important;"><i class="fas fa-check" style="color: #00ff88 !important;"></i> <strong>Gestão Meta Ads & Google Ads</strong></li>
-                        <li style="display: flex !important; align-items: center !important; justify-content: center !important; gap: 8px !important; color: #ffffff !important; font-size: 0.95rem !important; text-align: center !important;"><i class="fas fa-check" style="color: #00ff88 !important;"></i> <strong>Captação de Passageiros & Motoristas</strong></li>
-                        <li style="display: flex !important; align-items: center !important; justify-content: center !important; gap: 8px !important; color: #ffffff !important; font-size: 0.95rem !important; text-align: center !important;"><i class="fas fa-check" style="color: #00ff88 !important;"></i> <strong>Geo-Targeting & Lembrança de Marca</strong></li>
-                        <li style="display: flex !important; align-items: center !important; justify-content: center !important; gap: 8px !important; color: #ffffff !important; font-size: 0.95rem !important; text-align: center !important;"><i class="fas fa-check" style="color: #00ff88 !important;"></i> <strong>Direcionamento de Conteúdo Estratégico</strong></li>
-                        <li style="display: flex !important; align-items: center !important; justify-content: center !important; gap: 8px !important; color: #ffffff !important; font-size: 0.95rem !important; text-align: center !important;"><i class="fas fa-check" style="color: #00ff88 !important;"></i> <strong>Relatórios & Reuniões de Alinhamento</strong></li>
+                    <span class="save-tag">O que contempla nossa atuação conjunta:</span>
+                    <ul class="pricing-features-list">
+                        <li><i class="fas fa-check"></i> <div><strong>Atuação como Estrategista Digital:</strong> Planejamento, direcionamento e execução ativa do projeto.</div></li>
+                        <li><i class="fas fa-check"></i> <div><strong>Desenvolvimento & Otimização de Funis:</strong> Estruturação para atrair e converter alunas pagantes.</div></li>
+                        <li><i class="fas fa-check"></i> <div><strong>Criação ou Otimização de Site:</strong> Páginas com alta autoridade visual e foco em conversão.</div></li>
+                        <li><i class="fas fa-check"></i> <div><strong>Gestão Estratégica de Tráfego Pago:</strong> Campanhas no Meta Ads & Google Ads com público qualificado.</div></li>
+                        <li><i class="fas fa-check"></i> <div><strong>Estratégia de Conteúdo:</strong> Direcionamento para Instagram & YouTube gerando autoridade no nicho.</div></li>
+                        <li><i class="fas fa-check"></i> <div><strong>Organização das Plataformas Digitais:</strong> Checkouts, integrações e áreas de membros fluidas.</div></li>
                     </ul>
 
-                    <a href="https://wa.me/5547991316050?text=Ol%C3%A1%20Leonardo,%20gostaria%20de%20fechar%20a%20proposta%20de%20tr%C3%A1fego%20pago%20do%20Urbano%20Norte!" target="_blank" class="btn-cta" style="width: 100% !important; text-align: center !important;">
-                        <i class="fab fa-whatsapp" style="margin-right: 10px !important;"></i> ACEITAR PROPOSTA URBANO NORTE
+                    <a href="https://wa.me/5547991316050?text=Ol%C3%A1%20Leonardo,%20vamos%20iniciar%20a%20parceria%20estrat%C3%A9gica%20digital!" target="_blank" class="btn-cta">
+                        <i class="fab fa-whatsapp" style="margin-right: 10px !important;"></i> ACEITAR PARCERIA ESTRATÉGICA
                     </a>
                 </div>
             </div>
 
             <!-- BOTÃO AUXILIAR -->
-            <div class="reveal" style="text-align: center !important; margin-top: 40px !important;">
-                <p style="color: #94a3b8 !important; font-size: 0.95rem !important;">Dúvidas sobre a proposta? Clique no botão acima para conversar diretamente no WhatsApp.</p>
+            <div class="reveal" style="text-align: center !important; margin-top: 35px !important;">
+                <p style="color: #94a3b8 !important; font-size: 0.95rem !important;">Dúvidas sobre a parceria? Toque no botão acima para conversar diretamente comigo no WhatsApp.</p>
             </div>
         </div>
     </section>
@@ -803,16 +1576,15 @@
     <section id="finalizar" style="text-align: center !important;">
         <div class="lp-container">
             <i class="fas fa-hourglass-half reveal" style="color: #ffcc00 !important; font-size: 3rem !important; margin-bottom: 25px !important;"></i>
-            <h2 class="reveal">Condição comercial exclusiva por tempo limitado</h2>
+            <h2 class="reveal">Condição comercial exclusiva para início imediato</h2>
             <div class="countdown-grid reveal" id="countdown">
                 <div class="count-unit"><span class="count-num" id="days">00</span><span class="count-label">Dias</span></div>
                 <div class="count-unit"><span class="count-num" id="hours">00</span><span class="count-label">Horas</span></div>
                 <div class="count-unit"><span class="count-num" id="mins">00</span><span class="count-label">Min</span></div>
                 <div class="count-unit"><span class="count-num" id="secs">00</span><span class="count-label">Seg</span></div>
             </div>
-            <p class="reveal">Proposta válida para fechamento do Urbano Norte. Clique abaixo para garantir esta condição.</p>
             <div class="reveal">
-                <a href="https://wa.me/5547991316050?text=Ol%C3%A1%20Leonardo,%20gostaria%20de%20fechar%20a%20proposta%20de%20tr%C3%A1fego%20pago%20do%20Urbano%20Norte!" target="_blank" class="btn-cta">
+                <a href="https://wa.me/5547991316050?text=Ol%C3%A1%20Leonardo,%20vamos%20iniciar%20a%20parceria%20estrat%C3%A9gica%20digital!" target="_blank" class="btn-cta">
                     <i class="fab fa-whatsapp" style="margin-right: 15px !important;"></i> Falar com Leonardo Rek no WhatsApp
                 </a>
             </div>
@@ -827,19 +1599,19 @@
                     <img src="https://rek.leorek.com.br/wp-content/uploads/2026/07/imagem_rek.png" class="profile-img" alt="Leonardo Rek Profile" loading="lazy" decoding="async">
                 </div>
                 <div class="profile-info">
-                    <span class="profile-tag">Autoridade no Digital</span>
+                    <span class="profile-tag">Estrategista Digital</span>
                     <h3 class="profile-title">Quem é <span>Leonardo Rek</span>?</h3>
-                    <p class="profile-lead">Sou Leonardo Rek, estrategista digital. Atuo no marketing digital desde 2018 e hoje lidero uma equipe especializada em crescimento online.</p>
-                    <p class="profile-desc">Desenvolvemos funis ponta a ponta, somados a tráfego pago para atração e inteligência artificial para transformar interesse em vendas com mais previsibilidade.</p>
+                    <p class="profile-lead">Sou Leonardo Rek, estrategista digital. Atuo no mercado desde 2018 estruturando projetos e operações de vendas online.</p>
+                    <p class="profile-desc">Uno visão de negócios, engenharia de funis, gestão de tráfego pago e estratégia de conteúdo para transformar audiência em alunas e clientes reais, com foco em resultados sólidos e duradouros.</p>
                     
                     <div class="profile-badges">
                         <div class="profile-badge-item">
                             <i class="fas fa-briefcase" style="color: #00d1ff !important; font-size: 1rem !important;"></i>
-                            <span>Atuando desde 2018</span>
+                            <span>Atuação no Digital desde 2018</span>
                         </div>
                         <div class="profile-badge-item">
-                            <i class="fas fa-magic" style="color: #00ff88 !important; font-size: 1rem !important;"></i>
-                            <span>Foco em Alta Conversão & IA</span>
+                            <i class="fas fa-chart-line" style="color: #00ff88 !important; font-size: 1rem !important;"></i>
+                            <span>Estratégia, Funis & Vendas Online</span>
                         </div>
                     </div>
                 </div>
@@ -853,7 +1625,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <h4>Leonardo Rek</h4>
-                    <p>Estrategista Digital focado em vender mais com tráfego pago, estratégia digital e tecnologia para negócios.</p>
+                    <p>Estrategista Digital especializado em planejar, estruturar e executar operações de vendas no ambiente online através de funis, tráfego e estratégia de conteúdo.</p>
                 </div>
                 <div class="footer-contact">
                     <h4>Informações de Contato</h4>
@@ -886,7 +1658,7 @@
 
     <script>
         (function() {
-            const sectionsList = ['hero', 'escopo', 'garantia', 'preco', 'finalizar', 'bio', 'contato'];
+            const sectionsList = ['hero', 'escopo', 'resultados', 'preco', 'finalizar', 'bio', 'contato'];
             let currentSectionIndex = 0;
 
             function scrollToIdx(idx) {
@@ -1011,11 +1783,122 @@
                 });
             }
 
+            function initProofSliderAndLightbox() {
+                const proofImages = [
+                    "https://rek.leorek.com.br/wp-content/uploads/2025/10/IMG-20251014-WA0034.jpg", // #01
+                    "https://rek.leorek.com.br/wp-content/uploads/2025/10/IMG-20251018-WA0002.jpg", // #02
+                    "https://rek.leorek.com.br/wp-content/uploads/2025/10/IMG-20251018-WA0004.jpg", // #03
+                    "https://rek.leorek.com.br/wp-content/uploads/2025/10/IMG-20251018-WA0005.jpg", // #04
+                    "https://rek.leorek.com.br/wp-content/uploads/2025/10/IMG-20251018-WA0006.jpg", // #05 (WhatsApp)
+                    "https://rek.leorek.com.br/wp-content/uploads/2025/10/IMG-20251018-WA0008.jpg", // #06 (Instagram/Kiwify)
+                    "https://rek.leorek.com.br/wp-content/uploads/2025/10/IMG-20251018-WA0009.jpg", // #07 (22:18 lockscreen)
+                    "https://rek.leorek.com.br/wp-content/uploads/2025/10/IMG-20251018-WA0011.jpg", // #08
+                    "https://rek.leorek.com.br/wp-content/uploads/2025/10/IMG-20251018-WA0012.jpg", // #09
+                    "https://rek.leorek.com.br/wp-content/uploads/2025/10/IMG-20251018-WA0013.jpg", // #10
+                    "https://rek.leorek.com.br/wp-content/uploads/2025/10/IMG-20251018-WA0016.jpg", // #11
+                    "https://rek.leorek.com.br/wp-content/uploads/2025/10/IMG-20251018-WA0017.jpg"  // #12
+                ];
+
+                const mockups = document.querySelectorAll('#rek-landing-page .phone-mockup');
+
+                // Lightbox Elements
+                const lightbox = document.getElementById('rek-proof-lightbox');
+                const lightboxImg = document.getElementById('lightbox-current-img');
+                const lightboxCounterText = document.getElementById('lightbox-counter-text');
+                const lightboxCloseBtn = document.getElementById('lightbox-close-btn');
+                const lightboxPrevBtn = document.getElementById('lightbox-prev-btn');
+                const lightboxNextBtn = document.getElementById('lightbox-next-btn');
+                let currentProofIndex = 0;
+
+                // Funções do Lightbox
+                function openLightbox(idx) {
+                    if (!lightbox || !lightboxImg) return;
+                    currentProofIndex = (idx >= 0 && idx < proofImages.length) ? idx : 0;
+                    lightboxImg.src = proofImages[currentProofIndex];
+                    if (lightboxCounterText) {
+                        lightboxCounterText.textContent = `Comprovante ${(currentProofIndex + 1).toString().padStart(2, '0')} de ${proofImages.length.toString().padStart(2, '0')}`;
+                    }
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+
+                function closeLightbox() {
+                    if (!lightbox) return;
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+
+                function nextLightbox() {
+                    currentProofIndex = (currentProofIndex + 1) % proofImages.length;
+                    openLightbox(currentProofIndex);
+                }
+
+                function prevLightbox() {
+                    currentProofIndex = (currentProofIndex - 1 + proofImages.length) % proofImages.length;
+                    openLightbox(currentProofIndex);
+                }
+
+                // Eventos de clique nos mockups
+                mockups.forEach((mockup, idx) => {
+                    mockup.addEventListener('click', () => openLightbox(idx));
+                });
+
+                if (lightboxCloseBtn) {
+                    lightboxCloseBtn.addEventListener('click', closeLightbox);
+                }
+                if (lightboxPrevBtn) {
+                    lightboxPrevBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        prevLightbox();
+                    });
+                }
+                if (lightboxNextBtn) {
+                    lightboxNextBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        nextLightbox();
+                    });
+                }
+
+                // Fechar ao clicar fora da imagem
+                if (lightbox) {
+                    lightbox.addEventListener('click', (e) => {
+                        if (e.target === lightbox || e.target.classList.contains('lightbox-content-box')) {
+                            closeLightbox();
+                        }
+                    });
+                }
+
+                // Navegação por teclado
+                window.addEventListener('keydown', (e) => {
+                    if (!lightbox || !lightbox.classList.contains('active')) return;
+                    if (e.key === 'Escape') closeLightbox();
+                    if (e.key === 'ArrowRight') nextLightbox();
+                    if (e.key === 'ArrowLeft') prevLightbox();
+                });
+
+                // Suporte a swipe no lightbox em dispositivos móveis
+                let touchStartX = 0;
+                let touchEndX = 0;
+                if (lightbox) {
+                    lightbox.addEventListener('touchstart', (e) => {
+                        touchStartX = e.changedTouches[0].screenX;
+                    }, { passive: true });
+                    lightbox.addEventListener('touchend', (e) => {
+                        touchEndX = e.changedTouches[0].screenX;
+                        const diff = touchStartX - touchEndX;
+                        if (Math.abs(diff) > 50) {
+                            if (diff > 0) nextLightbox();
+                            else prevLightbox();
+                        }
+                    }, { passive: true });
+                }
+            }
+
             if (document.readyState === "complete" || document.readyState === "interactive") {
-                initCountdown(); initReveal(); initPagination(); initTabs();
+                initCountdown(); initReveal(); initPagination(); initTabs(); initProofSliderAndLightbox();
             } else {
                 document.addEventListener("DOMContentLoaded", () => {
-                    initCountdown(); initReveal(); initPagination(); initTabs();
+                    initCountdown(); initReveal(); initPagination(); initTabs(); initProofSliderAndLightbox();
                 });
             }
         })();
